@@ -141,7 +141,7 @@ function findStaff(staffAccount) {
   var index = -1;
   for (var i = 0; i < staffList.length; i++) {
     //kiẻm phần tử  staff trong mảng nào account khớp với stffshowaccount
-    if (staffList[i].accounts === staffAccount) {
+    if (staffList[i].account === staffAccount) {
       //i gan cho index xong break
       index = i;
       break;
@@ -174,6 +174,7 @@ function updateStaff() {
   //Tim index của nhân viên muốn cấp nhật
   // var index = findStaff(staff.account);
   // var index = findStaff(staff.fullName);
+  var index = findStaff(staff.account);
   staffList[index] = staff;
   localStorage.setItem("staffList", JSON.stringify(staffList));
   //B4 Gọi hàm display hiển thị
