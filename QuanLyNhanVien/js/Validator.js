@@ -82,7 +82,7 @@ Validator.isPassword = function (selector) {
   return {
     selector: selector,
     test: function (value) {
-      var regex = /^[A-Za-z]\w{6,10}$/;
+      var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,10}$/;
       return regex.test(value)
         ? undefined
         : "Password phải là 1 ký tự số, in hoa hoặc ký tự đặc biệt";
